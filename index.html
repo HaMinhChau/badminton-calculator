@@ -419,11 +419,9 @@
 
         if (currentMode === 'auto' && bankId && accountNo) {
             let baseUrl = `https://img.vietqr.io/image/${bankId}-${accountNo}-compact2.jpg`;
-            let contentNam = encodeURIComponent("NAM DONG TIEN CAU");
-            let contentNu = encodeURIComponent("NU DONG TIEN CAU");
-            
-            let urlNam = `${baseUrl}?amount=${giaNam}&addInfo=${contentNam}&accountName=${encodeURIComponent(accountName)}`;
-            let urlNu = `${baseUrl}?amount=${giaNu}&addInfo=${contentNu}&accountName=${encodeURIComponent(accountName)}`;
+
+            let urlNam = `${baseUrl}?amount=${giaNam}&accountName=${encodeURIComponent(accountName)}`;
+            let urlNu = `${baseUrl}?amount=${giaNu}&accountName=${encodeURIComponent(accountName)}`;
             
             document.getElementById('screenQrNam').src = urlNam;
             document.getElementById('screenQrNu').src = urlNu;
